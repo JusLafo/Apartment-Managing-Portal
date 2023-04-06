@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "private": true,
+  "workspaces": [
+    "server",
+    "client",
+    "e2e"
+  ],
+  "scripts": {
+    "build:client": "yarn workspace apartment-managing-portal-client build",
+    "dev": "yarn workspace apartment-managing-portal-server dev",
+    "dev:debug": "yarn workspace apartment-managing-portal-server dev:debug",
+    "heroku-postbuild": "yarn workspace apartment-managing-portal-client build",
+    "start": "yarn workspace apartment-managing-portal-server start",
+    "dev:cypress": "yarn workspace apartment-managing-portal-server dev:e2e",
+    "e2e:open": "yarn workspace apartment-managing-portal-e2e e2e:open",
+    "e2e:run": "yarn workspace apartment-managing-portal-e2e e2e:run"
+  },
+  "engines": {
+    "node": "^16.18"
+  }
+}
