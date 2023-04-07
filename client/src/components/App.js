@@ -8,6 +8,8 @@ import RegistrationForm from "./registration/RegistrationForm";
 import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
+import LandingPage from "./LandingPage.js";
+
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
   const fetchCurrentUser = async () => {
@@ -24,16 +26,17 @@ const App = (props) => {
   }, [])
 
   return (
-    <Router>
-      <TopBar user={currentUser} />
-      <Switch>
-        <Route exact path="/">
-          <h2>Hello from react</h2>
-        </Route>
-        <Route exact path="/users/new" component={RegistrationForm} />
-        <Route exact path="/user-sessions/new" component={SignInForm} />
-      </Switch>
-    </Router>
+    <div className="landing-page">
+      <Router>
+        <TopBar user={currentUser} />
+        <Switch>
+          <Route exact path="/" component={LandingPage}>
+          </Route>
+          <Route exact path="/users/new" component={RegistrationForm} />
+          <Route exact path="/user-sessions/new" component={SignInForm} />
+        </Switch>
+      </Router>
+    </div>
   );
 };
 
