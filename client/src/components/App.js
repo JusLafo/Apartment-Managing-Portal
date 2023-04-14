@@ -9,6 +9,7 @@ import SignInForm from "./authentication/SignInForm";
 import TopBar from "./layout/TopBar";
 
 import LandingPage from "./LandingPage.js";
+import Apartments from "./Apartments.js";
 
 const App = (props) => {
   const [currentUser, setCurrentUser] = useState(undefined);
@@ -30,8 +31,8 @@ const App = (props) => {
       <Router>
         <TopBar user={currentUser} />
         <Switch>
-          <Route exact path="/" component={LandingPage}>
-          </Route>
+          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/apartments" component={Apartments} />
           <Route exact path="/users/new" component={RegistrationForm} />
           <Route exact path="/user-sessions/new" component={SignInForm} />
         </Switch>
